@@ -1,6 +1,16 @@
 <div class="post-item-meta">
-    {{ i18n "format_date" .PublishDate }}
-    &emsp;
+    <time>{{- i18n "format_date" .PublishDate -}}</time>
+
+    {{- if gt .Params.categories 0 -}}
+    <i class="material-icons" style="">folder</i>
+    {{ range .Params.categories }}{{ . }}&nbsp;{{ end }}
+    {{- end -}}
+
+    {{- if gt .Params.tags 0 -}}
+    <i class="material-icons" style="">label</i>
+    {{ range .Params.tags }}{{ . }}&nbsp;{{ end }}
+    {{- end -}}
+
     <!-- Reading Time Start -->
     {{ if .Site.Params.enableReadingTime }}
     <i class="material-icons" style="font-size:10px">schedule</i>
@@ -15,8 +25,9 @@
     {{ $seconds }} {{ cond (eq $seconds 1) "second" "s" }}
     {{ end }}
     <!-- Reading Time End -->
-    &emsp;
+
     {{ if .Draft }}
+    &emsp;
     <span class="draft-label">{{ i18n "draft" }}</span>
     {{ end }}
 </div>

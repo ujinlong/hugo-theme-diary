@@ -7,7 +7,9 @@
                     <div class="post-item post-item-no-gaps">
                         <div class="post-item-info-wrapper">
                             <div class="post-item-title post-item-title-small year">
-                                {{ .Key }}
+                                {{ .Key }} /
+                                <!-- {{ $pageCount := len .Pages }}
+                                {{ $pageCount }} post{{ if ne $pageCount 1 }}s{{ end }} -->
                             </div>
                         </div>
                     </div>

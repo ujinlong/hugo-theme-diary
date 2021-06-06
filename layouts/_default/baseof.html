@@ -1,21 +1,19 @@
 <!DOCTYPE html>
-<html>
-    {{- partial "head.html" . -}}
-    <body>
-    	<div id="app">
-            {{- partial "sidebar.html" . -}}
-            {{- partial "extrabar.html" . -}}
-            <!-- PC view -->
+<html lang="{{ .Site.LanguageCode }}" x-ms-format-detection="none">
+{{- partial "head.html" . -}}
+<body>
 
-            {{- partial "mobile-header.html" . -}}
-            <!-- mobile header -->
-            <div id="content">
-                    {{- block "main" . }}{{- end }}
-            </div>
-        
-            {{- partial "mobile-footer.html" . -}}
-            <!-- mobile footer -->
-            </div>
-    {{ partial "journal.html" .}}
-    </body>
+<div id="app">
+{{- partial "sidebar.html" . -}} <!-- desktop view -->
+{{- partial "extrabar.html" . -}}
+
+{{- partial "mobile-header.html" . -}} <!-- mobile header -->
+
+<main id="content">
+{{- block "main" . }}{{- end }}
+</main>
+</div>
+
+{{- partial "footer.html" . -}}
+</body>
 </html>
