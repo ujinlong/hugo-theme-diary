@@ -5,7 +5,7 @@ $front-container-background: #ffffff;
 
 $default-font-list: "Lora","Noto Serif SC","Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,
                     "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-$mono-font-list: "Fira Mono", "Cousine", Monaco, Menlo, "Source Code Pro", monospace;
+$mono-font-list: Menlo, Meslo, "Noto Mono", "Source Code Pro", monospace;
 $sans-preferred-font-list: $default-font-list;
 
 $side-container-width: 25%; //280px;

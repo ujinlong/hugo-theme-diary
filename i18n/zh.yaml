@@ -34,3 +34,9 @@
   translation: 草稿
 - id: toc_title
   translation: 目录
+- id: series_start
+  translation: 本文属于
+- id: series_end
+  translation: 系列：
+- id: series_current
+  translation: （本文）

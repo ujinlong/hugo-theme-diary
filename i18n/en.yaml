@@ -34,3 +34,9 @@
   translation: DRAFT
 - id: toc_title
   translation: CATALOG
+- id: series_start
+  translation: This is a post in the
+- id: series_end
+  translation: "series:"
+- id: series_current
+  translation: (current post)
