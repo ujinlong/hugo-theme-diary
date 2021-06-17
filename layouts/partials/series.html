@@ -2,24 +2,22 @@
 https://realjenius.com/2017/08/07/series-list-with-hugo/
 https://damien.co/blog/2020-07-18-hugo-related-series-content-shortcode/
  -->
-{{ $series := $.Page.Params.series }}
+{{ range $index, $series := .Params.series }}
 <dl class="post-series">
   <dt>
     This is a post in the
-    {{- range .Params.series -}}
-        &nbsp;<a href="{{ "/series/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>&nbsp;
-    {{- end -}}
+    <a href="{{ "/series/" | relLangURL }}{{ . | urlize }}">{{ $series }}</a>
     series:
   </dt>
   <dd>
   <ol>
-    {{ range $ind,$art := $.Site.Pages.ByDate }}
-      {{ if eq $art.Params.series $series }}
+    {{ range $ind, $post := $.Site.Pages.ByDate }}
+      {{ if in $post.Params.series $series }}
         <li>
-          {{ if eq $art.Permalink $.Page.Permalink}}
-            {{ $art.Params.title }}&emsp;(current post)
+          {{ if eq $post.Permalink $.Page.Permalink }}
+            {{ $post.Params.title }}&emsp;(current post)
           {{ else }}
-            <a href="{{ $art.Permalink }}">{{ $art.Params.title }}</a>
+            <a href="{{ $post.Permalink }}">{{ $post.Params.title }}</a>
           {{ end }}
         </li>
       {{ end }}
@@ -27,4 +25,5 @@ https://damien.co/blog/2020-07-18-hugo-related-series-content-shortcode/
   </ol>
   </dd>
 </dl>
+{{ end }}
 <hr />
