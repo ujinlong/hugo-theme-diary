@@ -74,8 +74,11 @@
                 {{ $seconds }} {{ cond (eq $seconds 1) "second" "s" }}.
             {{- end -}}
         </div>
+        <!-- close post-meta -->
     </div>
+    <!-- close post-title -->
 </div>
+<!-- close post-class -->
 
 <div class="post-body-wrapper">
     {{ if .Params.enableVue }}
@@ -83,6 +86,10 @@
     {{ else }}
     <div class="post-body" v-pre>
     {{ end }}
+    {{ if .Page.Params.series }}
+    {{- partial "series.html" . -}}
+    {{ end }}
+
     {{.Content}}
     <hr width="100%" id="EOF">
     </div>
