@@ -13,11 +13,13 @@
 </blockquote>
 {{ else }}
 <blockquote class="fediverse-status fediverse-status-cw">
-  <input class="fediverse-status-cw__input" id="cw-{{ $baseUrl }}-{{ $id }}" type="checkbox" name="cw" />
-  <label class="fediverse-status-cw__label" for="cw-{{ $baseUrl }}-{{ $id }}">{{- $json.spoiler_text | markdownify -}}</label>
-  <div class="fediverse-status-cw__content">
-  {{- $json.content | markdownify -}}
-  </div>
+  <details class="fediverse-status-cw__content">
+      <summary class="fediverse-status-cw__label">
+          <span class="fediverse-status-cw__tag">{{ i18n "click_to_open" }}</span>
+          <span class="fediverse-status-cw__spoiler-text">{{- $json.spoiler_text | markdownify -}}</span>
+      </summary>
+      {{- $json.content | markdownify -}}
+  </details>
   <footer>&mdash;&nbsp;<cite>{{- $json.account.display_name -}}&nbsp;(@{{- $json.account.acct -}}&#8203;@{{- $baseUrl -}}) <a href="{{- $json.url -}}">{{- dateFormat "January 2, 2006" $json.created_at -}}</a></cite></footer>
 </blockquote>
 {{ end }}
