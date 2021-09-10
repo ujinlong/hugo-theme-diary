@@ -3,12 +3,20 @@
 {{- $id := .Get 1 -}}
 {{- $json := getJSON $prefix $baseUrl "/api/v1/statuses/" $id -}}
 {{- $cw := $json.spoiler_text -}}
+{{- $media := $json.media_attachments -}}
 
 {{ if eq $cw "" }}
 <blockquote class="fediverse-status">
   <div class="fediverse-status__content">
   {{- $json.content | markdownify -}}
   </div>
+  {{ with $media }}
+    <div class="fediverse-status__media">
+    {{ range . }}
+        <a href="{{ .url }}"><img src="{{ .preview_url }}"{{ with .description }} alt="{{ . }}"{{ end }} /></a>
+    {{ end }}
+    </div>
+  {{ end }}
   <footer>&mdash;&nbsp;<cite>{{- $json.account.display_name -}}&nbsp;(@{{- $json.account.acct -}}&#8203;@{{- $baseUrl -}}) <a href="{{- $json.url -}}">{{- dateFormat "January 2, 2006" $json.created_at -}}</a></cite></footer>
 </blockquote>
 {{ else }}
@@ -18,7 +26,14 @@
           <span class="fediverse-status-cw__tag">{{ i18n "click_to_open" }}</span>
           <span class="fediverse-status-cw__spoiler-text">{{- $json.spoiler_text | markdownify -}}</span>
       </summary>
-      {{- $json.content | markdownify -}}
+      <div>{{- $json.content | markdownify -}}</div>
+      {{ with $media }}
+        <div class="fediverse-status__media">
+        {{ range . }}
+            <a href="{{ .url }}"><img src="{{ .preview_url }}"{{ with .description }} alt="{{ . }}"{{ end }} /></a>
+        {{ end }}
+        </div>
+      {{ end }}
   </details>
   <footer>&mdash;&nbsp;<cite>{{- $json.account.display_name -}}&nbsp;(@{{- $json.account.acct -}}&#8203;@{{- $baseUrl -}}) <a href="{{- $json.url -}}">{{- dateFormat "January 2, 2006" $json.created_at -}}</a></cite></footer>
 </blockquote>
