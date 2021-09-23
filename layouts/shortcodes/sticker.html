@@ -1,6 +1,6 @@
 {{ $name := .Get "name" | default (.Get 0) }}
 {{ $folder := .Get "folder" | default "sticker" }}
-{{ $height := .Get "h" | default 150 }}
+{{ $height := .Get "h" | default "150" }}
 {{ $alt    := .Get "alt" | default "animated sticker" }}
 {{ $animated := .Get "animated" | default "true" }}
 {{ $loop := .Get "loop" | default "true" }}
