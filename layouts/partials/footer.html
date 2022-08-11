@@ -2,4 +2,9 @@
 {{- partial "mobile-footer.html" . -}} <!-- mobile footer -->
 {{- partial "journal.html" . -}} <!-- desktop footer -->
 {{- if not .Site.IsServer -}}{{- partial "disqus.html" . -}}{{- end -}}
+
+<!-- copy code -->
+{{ if (findRE "<code" .Content 1) }}
+    <script src="{{"/js/clipboard.js" | relURL}}"></script>
+{{ end }}
 </footer>

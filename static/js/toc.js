@@ -1,4 +1,4 @@
- var spy = function () {
+var spy = function () {
   var elems = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
   if (elems.length == 0) {
     return;
