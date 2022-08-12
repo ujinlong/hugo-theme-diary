@@ -3,6 +3,10 @@
 {{- partial "head.html" . -}}
 <body>
 
+<section class="a11y-links">
+<a class="a11y-links__link" tabindex="0" href="#content">{{- i18n "skip_to_main" -}}</a>
+</section>
+
 <div id="app">
 {{- partial "sidebar.html" . -}} <!-- desktop view -->
 {{- partial "extrabar.html" . -}} <!-- toc & pagination -->

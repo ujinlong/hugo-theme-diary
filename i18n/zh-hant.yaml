@@ -9,7 +9,7 @@
 - id: prev_link
   translation: 上回
 - id: no_newer_posts
-  translation: 已經到底啦。
+  translation: 這是最新的文章了。
 - id: no_older_posts
   translation: 這是最舊的文章了。
 - id: comments_disabled
@@ -26,3 +26,5 @@
   translation: 草稿
 - id: toc_title
   translation: 目錄
+- id: skip_to_main
+  translation: 跳到主要內容
