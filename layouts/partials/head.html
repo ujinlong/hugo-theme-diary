@@ -86,14 +86,15 @@
 {{ end }}
 
 <!-- custom CSS (page-wise) under each page folder -->
+{{ if .IsPage }}
 {{ if .Params.css.file }}
-  {{ with $.Resources.Match "**.css" }}
-  {{ $style := . | resources.Concat "extra.css" | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}" media="screen" />
+  {{ with .Resources.GetMatch "**.css" }}
+  <style>{{ .Content | safeCSS }}</style>
   {{ end }}
 {{ end }}
 {{ if .Params.css.src }}
   <link rel="stylesheet" href="{{ .Params.css.src }}" media="screen" />
+{{ end }}
 {{ end }}
 
 <!-- asynchronously load Google Fonts -->
