@@ -3,5 +3,5 @@
     <summary>
         {{ i18n "click_to_open" }}{{ .Get (.Scratch.Get "lastp") | markdownify }}
     </summary>
-    {{ .Inner | markdownify }}
+    {{ .InnerDeindent }}
 </details>
