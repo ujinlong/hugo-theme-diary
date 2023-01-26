@@ -15,7 +15,7 @@ https://damien.co/blog/2020-07-18-hugo-related-series-content-shortcode/
       {{ if in $post.Params.series $series }}
         <li>
           {{ if eq $post.Permalink $.Page.Permalink }}
-            {{ i18n "series_current" }}&nbsp;{{ $post.Params.title }}
+            {{ $post.Params.title }}&nbsp;{{ i18n "series_current" }}
           {{ else }}
             <a href="{{ $post.Permalink }}">{{ $post.Params.title }}</a>
           {{ end }}

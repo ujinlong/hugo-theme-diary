@@ -8,21 +8,18 @@
    {{ with .Get "target" }} target="{{ . }}"{{ end }}
    {{ with .Get "rel" }} rel="{{ . }}"{{ end }}>
 {{- end -}}
-
 <!-- Begin img tag -->
-{{- if .Get "src" -}}
+{{- if .Get "src" }}
 <img src="{{ .Get "src" }}"
-{{- else -}}
+{{- else }}
 <img src="/{{ .Get "folder" | default "post-img" }}/{{ .Get "name" }}"
-{{- end -}}
+{{- end }}
      loading="lazy"
      alt="{{ $alt | markdownify| plainify }}"
      style='max-width: {{ $width }}; {{- with .Get "h" }}max-height: {{ . }};{{ end -}}'
 /><!-- Close img tag -->
-
-{{- if .Get "link" }}</a>{{ end -}}
+{{- if .Get "link" -}}</a>{{- end -}}
 <!-- Close a tag -->
-
 {{- if or (or (.Get "title") (.Get "caption")) (.Get "attr") -}}
 <figcaption>
     {{ with (.Get "title") -}}
