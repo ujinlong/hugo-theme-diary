@@ -3,5 +3,7 @@
     <summary>
         {{ i18n "click_to_open" }}{{ .Get (.Scratch.Get "lastp") | markdownify }}
     </summary>
-    {{ .InnerDeindent }}
+    <div class="fold__details">
+    {{ .Inner }}
+    </div>
 </details>
