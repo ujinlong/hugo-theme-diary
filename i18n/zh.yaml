@@ -16,6 +16,8 @@
   translation: 没有更黑的黑历史啦。
 - id: click_to_open
   translation: 点击展开：
+- id: click_to_close
+  translation: 点击关闭：
 - id: ruby_rp_start
   translation: （读作：
 - id: ruby_rp_end

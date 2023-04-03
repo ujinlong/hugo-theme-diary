@@ -1,0 +1,3 @@
+{{ $block := .Get "block" | default "true" }}
+{{ $optBlock := cond (ne $block "true") (dict "display" "inline") (dict "display" "block") }}
+{{ .Inner | $.Page.RenderString $optBlock }}
