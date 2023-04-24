@@ -23,9 +23,9 @@
 {{- if .Get "title" -}}
 <figcaption>
     <p>
-        {{- with .Get "attrlink" }}<a href="{{ . }}">{{- end -}}
-        {{- .Get "title" | markdownify -}}
-        {{- if .Get "attrlink" }}</a>{{ end }}
+    {{- with .Get "attrlink" }}<a href="{{ . }}">{{- end -}}
+    {{- .Get "title" | markdownify -}}
+    {{- if .Get "attrlink" }}</a>{{ end }}
     </p>
 </figcaption>
 {{- end }}
