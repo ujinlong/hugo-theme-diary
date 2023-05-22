@@ -41,6 +41,6 @@
 - id: series_end
   translation: 系列：
 - id: series_current
-  translation: （本文）
+  translation: 本文
 - id: skip_to_main
   translation: 跳到主要内容

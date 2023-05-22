@@ -1,9 +1,9 @@
-{{- $prefix := "https://" -}}
+{{- $prefix  := "https://" -}}
 {{- $baseUrl := .Get 0 -}}
-{{- $id := .Get 1 -}}
-{{- $json := getJSON $prefix $baseUrl "/api/v1/statuses/" $id -}}
-{{- $cw := $json.spoiler_text -}}
-{{- $media := $json.media_attachments -}}
+{{- $id      := .Get 1 -}}
+{{- $json    := getJSON $prefix $baseUrl "/api/v1/statuses/" $id -}}
+{{- $cw      := $json.spoiler_text -}}
+{{- $media   := $json.media_attachments -}}
 
 {{ if eq $cw "" }}
 <blockquote class="fediverse-status">

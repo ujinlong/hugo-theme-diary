@@ -41,6 +41,6 @@
 - id: series_end
   translation: "series:"
 - id: series_current
-  translation: (current post)
+  translation: current post
 - id: skip_to_main
   translation: "Skip to main content"

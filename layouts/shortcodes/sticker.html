@@ -1,9 +1,9 @@
-{{ $name := .Get "name" | default (.Get 0) }}
+{{ $name   := .Get "name" | default (.Get 0) }}
 {{ $folder := .Get "folder" | default "sticker" }}
 {{ $height := .Get "h" | default "150" }}
 {{ $alt    := .Get "alt" | default "animated sticker" }}
 {{ $animated := .Get "animated" | default "true" }}
-{{ $loop := .Get "loop" | default "true" }}
+{{ $loop   := .Get "loop" | default "true" }}
 
 {{ with $animated }}{{ if eq . "true" }}
 <video autoplay {{ if ne $loop "false" }}loop{{ end }} muted disablePictureInPicture class="sticker" height={{ $height }}>

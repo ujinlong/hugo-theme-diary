@@ -1,7 +1,6 @@
 {{ $cols := split .Inner "||" }}
-
 {{ $lang := .Get "lang" | default ( .Get 0 ) }}
-{{ $lang := split $lang "," }}
+{{ $lang  = split $lang "," }}
 
 <div class="row">
 {{ range $indCol,$col := $cols }}

@@ -1,4 +1,4 @@
-{{ $block := .Get "block" | default "true" }}
+{{ $block    := .Get "block" | default "true" }}
 {{ $markdown := .Inner | markdownify }}
 {{ if or ( strings.Contains $markdown "<p>" ) ( ne $block "true" ) }}
   {{ $markdown }}

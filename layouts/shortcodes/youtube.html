@@ -1,5 +1,5 @@
-{{ $id := .Get "id" | default (.Get 0) }}
-{{ $4x3 := .Get "4x3" | default "false" }}
+{{ $id    := .Get "id" | default (.Get 0) }}
+{{ $4x3   := .Get "4x3" | default "false" }}
 {{ $title := .Get "title" | default "YouTube Video" }}
 
 <div class="video-container {{ with $4x3 }}{{ if eq . "true" }}video-container--4x3{{ else }}video-container--16x9{{ end }}{{ end }}">

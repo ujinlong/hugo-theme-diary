@@ -1,10 +1,16 @@
 <head>
-<title>{{.Title}} - {{ .Site.Params.title }}</title>
+<title>
+{{- if .IsHome -}}
+{{ .Site.Params.title }}
+{{- else -}}
+{{.Title}} - {{ .Site.Params.title }}
+{{- end -}}
+</title>
 
-{{ $description := .Params.description}}
-{{ if .IsHome }}
-{{ $description = .Site.Params.description}}
-{{ end }}
+{{- $description := .Params.description -}}
+{{- if .IsHome -}}
+{{- $description = .Site.Params.description -}}
+{{- end -}}
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
