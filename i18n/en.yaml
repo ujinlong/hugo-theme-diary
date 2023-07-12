@@ -44,3 +44,5 @@
   translation: current post
 - id: skip_to_main
   translation: "Skip to main content"
+- id: search
+  translation: "Search"

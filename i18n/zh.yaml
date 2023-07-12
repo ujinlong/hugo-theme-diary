@@ -44,3 +44,5 @@
   translation: 本文
 - id: skip_to_main
   translation: 跳到主要内容
+- id: search
+  translation: "搜索"
