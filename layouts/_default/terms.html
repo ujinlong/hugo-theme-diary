@@ -6,7 +6,7 @@
       <div class="post-item post-item-no-gaps">
         <div class="post-item-info-wrapper">
           <div class="post-item-title post-item-title-small">
-            {{.Title}}
+            {{ .Title }}
           </div>
         </div>
       </div>
@@ -16,13 +16,12 @@
     {{ range .Data.Terms }}
     <div class="tag">
       <a href="{{.Page.RelPermalink}}" class="btn btn-outline-secondary position-relative rounded-pill">
-        {{.Page.Title}}
-        <span class="badge">({{.Count}})</span>
+        {{ .Page.Title }}
+        <span class="badge">({{ .Count }})</span>
       </a>
     </div>
     {{ end }}
   </div>
 </div>
-
 
 {{ end }}

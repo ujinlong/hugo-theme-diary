@@ -1,4 +1,5 @@
 {{ define "main" }}
+
 <div class="post-list-container post-list-container-shadow">
 <div class="post">
 {{ $post_class := "post-head-wrapper-text-only"}}
@@ -38,7 +39,6 @@
             {{- end -}}
 
             {{- if gt .Params.categories 0 -}}
-            &emsp;
             <div class="post-cats">
             <i class="material-icons" style="">folder</i>&nbsp;
             {{- range .Params.categories -}}
@@ -47,7 +47,6 @@
             {{- end -}}
 
             {{- if gt .Params.tags 0 -}}
-            &emsp;
             <div class="post-tags">
             <i class="material-icons" style="">label</i>&nbsp;
             {{- range .Params.tags -}}
@@ -56,7 +55,6 @@
             {{- end -}}
 
             {{- if .Draft -}}
-            &emsp;
             <span class="draft-label"><a href="/archives/drafts/">{{ i18n "draft" }}</a></span>
             {{- end -}}
 
@@ -73,11 +71,11 @@
                 {{ $seconds }} {{ cond (eq $seconds 1) "second" "s" }}.
             {{- end -}}
         </div>
-        <!-- close post-meta -->
+        {{/* close post-meta */}}
     </div>
-    <!-- close post-title -->
+    {{/* close post-title */}}
 </div>
-<!-- close post-class -->
+{{/* close post-class */}}
 
 <div class="post-body-wrapper">
     {{ if .Params.enableVue }}
@@ -92,7 +90,6 @@
     {{.Content}}
     <hr width="100%" id="EOF">
     </div>
-<<<<<<< HEAD
 </div>
 
 {{ if ne .Params._build.list "never"}}

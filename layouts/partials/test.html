@@ -1,0 +1,13 @@
+<p>{{ printf "%#v" . }}</p>
+<p>
+<code>File = </code>{{ $.Page.File }}<br />
+<code>Kind = </code>{{ .Kind }}<br />
+<code>IsNode = </code>{{ .IsNode }}<br />
+<code>IsRegularPage = </code>{{ .IsPage }}<br />
+<code>Prev = </code>{{ .Prev }}<br />
+<code>Next = </code>{{ .Next }}<br />
+<code>ParentSection = </code>{{ .Section }}<br />
+<code>PrevInSection = </code>{{ .PrevInSection }}<br />
+<code>NextInSection = </code>{{ .NextInSection }}<br />
+<code>SubSection = </code>{{ .Sections }}<br />
+</p>

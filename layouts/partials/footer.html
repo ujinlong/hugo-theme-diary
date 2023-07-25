@@ -1,10 +1,18 @@
-<footer>
-{{- partial "mobile-footer.html" . -}} <!-- mobile footer -->
-{{- partial "journal.html" . -}} <!-- desktop footer -->
-{{- if not .Site.IsServer -}}{{- partial "disqus.html" . -}}{{- end -}}
+{{- partial "journal.html" . -}} {{/* desktop footer */}}
 
-<!-- copy code -->
+{{/* For compatibility. View https://github.com/AmazingRise/hugo-theme-diary/pull/135 for details.*/}}
+{{- $hugoVersion := split (replaceRE ".*([0-9]+)\\.([0-9]+)\\.([0-9]+).*" "$1 $2 $3" hugo.Version) " " -}}
+{{- if and (eq (int (index $hugoVersion 0)) 0) (ge (int (index $hugoVersion 1)) 101) -}}
+    {{- /* no leading slash */ -}}
+    <script src="{{"js/journal.js" | relURL}}"></script>
+{{- else -}}
+    {{- /* with leading slash */ -}}
+    <script src="{{"/js/journal.js" | relURL}}"></script>
+{{- end -}}
+
+{{- if not .Site.IsServer -}}{{/* partial "disqus.html" . */}}{{- end -}}
+
+{{/* copy code */}}
 {{ if (findRE "<code" .Content 1) }}
     <script src="{{"/js/clipboard.js" | relURL}}"></script>
 {{ end }}
-</footer>

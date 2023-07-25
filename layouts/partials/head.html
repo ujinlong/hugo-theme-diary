@@ -21,43 +21,43 @@
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="x-dns-prefetch-control" content="off">
 
-<!-- platform specific -->
+{{/* platform specific */}}
 <meta name="renderer" content="webkit">
 <meta name="theme-color" content="#ffffff">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-<!-- Google Analysis -->
+{{/* Google Analysis */}}
 {{ with .Site.Params.googleSiteVerification }}
 <meta name="google-site-verification" content="{{ . }}">
 {{ end }}
 
-<!-- noindex -->
+{{/* noindex */}}
 {{ if .Params.noindex }}
 <meta name="robots" content="noindex">
 <meta name="googlebot" content="noindex">
 {{ end }}
 
-<!-- rss feed -->
+{{/* rss feed */}}
 {{ range .AlternativeOutputFormats -}}
 {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
 {{ end -}}
 
-<!-- open-graph -->
+{{/* open-graph */}}
 {{ if .Site.Params.enableOpenGraph }}
 {{ template "_internal/opengraph.html" . }}
 {{ end }}
 
-<!-- twitter-cards -->
+{{/* twitter-cards */}}
 {{ if .Site.Params.enableTwitterCards }}
 {{ template "_internal/twitter_cards.html" . }}
 {{ end }}
 
-<!-- metadata -->
+{{/* metadata */}}
 {{ if .Site.GoogleAnalytics }}
 {{ template "_internal/google_analytics.html" . }}
 {{ end }}
 
-<!-- https://clarity.microsoft.com for detail -->
+{{/* https://clarity.microsoft.com for detail */}}
 {{ if .Site.Params.Clarity }}
 <script type="text/javascript">
   (function(c,l,a,r,i,t,y){
@@ -84,7 +84,7 @@
 <link rel="apple-touch-icon" href="{{ .Site.Params.touchicon | absURL }}" />
 {{ end }}
 
-<!-- For compatibility. View https://github.com/AmazingRise/hugo-theme-diary/pull/135 for details.-->
+{{/* For compatibility. View https://github.com/AmazingRise/hugo-theme-diary/pull/135 for details. */}}
 {{- $hugoVersion := split (replaceRE ".*([0-9]+)\\.([0-9]+)\\.([0-9]+).*" "$1 $2 $3" hugo.Version) " " -}}
 {{- if and (eq (int (index $hugoVersion 0)) 0) (ge (int (index $hugoVersion 1)) 101) -}}
     {{- /* no leading slash */ -}}
@@ -108,13 +108,13 @@
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen" />
 {{ end }}
 
-<!-- custom CSS (site wide) under ./assets/css/ -->
+{{/* custom CSS (site wide) under ./assets/css/ */}}
 {{ if .Site.Params.customCSS }}
 {{ $style := resources.Match "css/**.css" | resources.Concat "custom.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}" media="screen" />
 {{ end }}
 
-<!-- custom CSS (page-wise) under each page folder -->
+{{/* custom CSS (page-wise) under each page folder */}}
 {{ if .IsPage }}
 {{ if .Params.css.file }}
   {{ with .Resources.GetMatch "**.css" }}
@@ -126,8 +126,8 @@
 {{ end }}
 {{ end }}
 
-<!-- asynchronously load Google Fonts -->
-<!-- https://csswizardry.com/2020/05/the-fastest-google-fonts/#google-fonts-async-snippet -->
+{{/* asynchronously load Google Fonts */}}
+{{/* https://csswizardry.com/2020/05/the-fastest-google-fonts/#google-fonts-async-snippet */}}
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="preload" as="style"
       href="https://fonts.googleapis.com/css?family=Lora|Noto+Serif+SC|Material+Icons&display=swap" />
@@ -140,12 +140,12 @@
 </noscript>
 
 {{ if .Site.Params.cloudflareToken }}
-<!-- Cloudflare Web Analytics -->
+{{/* Cloudflare Web Analytics */}}
 <script defer
 	src='https://static.cloudflareinsights.com/beacon.min.js'
 	data-cf-beacon='{"token": {{ .Site.Params.cloudflareToken }}'>
 </script>
-<!-- End Cloudflare Web Analytics -->
+{{/* End Cloudflare Web Analytics */}}
 {{ end }}
 
 {{ if .Params.enableLaTeX | or .Site.Params.enableLaTeX | or .Params.enableMathJax }}
@@ -173,7 +173,7 @@
 {{ if and ( and ( .Site.Params.enableGitalk ) ( .IsPage ) ) ( or ( not ( isset .Params "comment" ) ) ( eq .Params.comment true ) ) }}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-<!-- For compatibility. View https://github.com/AmazingRise/hugo-theme-diary/pull/135 for details.-->
+{{/* For compatibility. View https://github.com/AmazingRise/hugo-theme-diary/pull/135 for details. */}}
 {{- $hugoVersion := split (replaceRE ".*([0-9]+)\\.([0-9]+)\\.([0-9]+).*" "$1 $2 $3" hugo.Version) " " -}}
 {{- if and (eq (int (index $hugoVersion 0)) 0) (ge (int (index $hugoVersion 1)) 101) -}}
     {{- /* no leading slash */ -}}
@@ -219,7 +219,7 @@
 />
 {{ end }}
 
-<!-- head custom -->
+{{/* head custom */}}
 {{- partial "extended_head.html" . }}
 
 </head>
