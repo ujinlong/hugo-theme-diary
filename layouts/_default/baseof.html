@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}" x-ms-format-detection="none">
+<html>
 {{- partial "head.html" . -}}
 <body>
 
@@ -8,16 +8,30 @@
 </section>
 
 <div id="app">
-{{- partial "sidebar.html" . -}} <!-- desktop view -->
-{{- partial "extrabar.html" . -}} <!-- toc & pagination -->
+    {{- partial "mobile-header.html" . -}}
+    <!-- mobile header -->
+    <main id="content">
+    <div id="streamContainer" class="stream-container">
+        {{- block "main" . }}{{- end }}
+    </div>
+    </main>
 
-{{- partial "mobile-header.html" . -}} <!-- mobile header -->
+    {{- partial "sidebar.html" . -}}
+    {{- partial "extrabar.html" . -}}
 
-<main id="content">
-{{- block "main" . }}{{- end }}
-</main>
+    {{- partial "mobile-footer.html" . -}}
+    <!-- mobile footer -->
 </div>
+{{ partial "journal.html" .}}
+<!-- For compatibility. View https://github.com/AmazingRise/hugo-theme-diary/pull/135 for details.-->
+{{- $hugoVersion := split (replaceRE ".*([0-9]+)\\.([0-9]+)\\.([0-9]+).*" "$1 $2 $3" hugo.Version) " " -}}
+{{- if and (eq (int (index $hugoVersion 0)) 0) (ge (int (index $hugoVersion 1)) 101) -}}
+    {{- /* no leading slash */ -}}
+    <script src="{{"js/journal.js" | relURL}}"></script>
+{{- else -}}
+    {{- /* with leading slash */ -}}
+    <script src="{{"/js/journal.js" | relURL}}"></script>
+{{- end -}}
 
-{{- partial "footer.html" . -}}
 </body>
 </html>

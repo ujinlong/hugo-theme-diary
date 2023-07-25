@@ -1,13 +1,11 @@
 {{ define "main" }}
-<div ref="streamContainer" class="stream-container">
+
     <div class="post-list-container post-list-container-shadow">
         <div class="post-item-wrapper post-item-wrapper-no-hover">
             <div class="post-item post-item-no-gaps">
                 <div class="post-item-info-wrapper">
                     <div class="post-item-title  post-item-title-small">
-                        <a href="{{.CurrentSection.Permalink}}">{{.CurrentSection.Title}}</a> / {{ .Title }} /
-                        {{ $pageCount := len .Pages }}
-                        {{ $pageCount }} {{ if ne $pageCount 1 }}entries{{ else }}entry{{ end }}
+                        <a href="{{ .Parent.RelPermalink }}">{{.Parent.Title}}</a> / {{ .Title }}
                     </div>
                 </div>
             </div>
@@ -22,23 +20,10 @@
                         </div>
                         {{ partial "post-item-meta.html" . }}
                     </div>
-                    {{ $featured_image := .Params.featured_image }}
-                    {{ if $featured_image }}
-                        {{ $image := .Resources.GetMatch (.Params.featured_image) }}
-                        <div class="post-item-image-wrapper">
-                        <div class="post-item-image"
-                        {{ if $image }}
-                             style="background-image: url('{{ $image.Permalink }}')"
-                        {{ else }}
-                             style="background-image: url('{{ $featured_image | absURL}}')"
-                        {{ end }}
-                        ></div>
-                        </div>
-                    {{ end }}
                 </div>
             </div>
         </a>
         {{- end -}}
     </div>
-</div>
+
 {{ end }}
