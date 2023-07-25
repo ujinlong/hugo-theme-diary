@@ -2,3 +2,16 @@
 .DS_Store
 .AppleDouble
 .LSOverride
+
+# hugo
+.hugo_build.lock
+
+# folders
+/public/
+thumbnails/
+exampleSite/
+draft/
+migration/
+/content/drafts/
+_gen/
+static/_pagefind
