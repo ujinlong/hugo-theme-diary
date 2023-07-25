@@ -4,7 +4,9 @@
     <div class="post-item post-item-no-gaps">
       <div class="post-item-info-wrapper">
         <div class="post-item-title  post-item-title-small">
-          <a href="{{ .Parent.RelPermalink }}">{{.Parent.Title}}</a> / {{ .Title }}
+          <a href="{{ .Parent.RelPermalink }}">{{.Parent.Title}}</a> / {{ .Title }} /&#32;
+            {{- $pageCount := len .Pages -}}
+            {{- $pageCount -}}&#32;{{- if ne $pageCount 1 -}}entries{{- else -}}entry{{- end -}}
         </div>
       </div>
     </div>

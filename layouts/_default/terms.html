@@ -6,14 +6,16 @@
       <div class="post-item post-item-no-gaps">
         <div class="post-item-info-wrapper">
           <div class="post-item-title post-item-title-small">
-            {{ .Title }}
+            {{ .Title }} /&#32;
+            {{- $pageCount := len .Data.Terms -}}
+            {{- $pageCount -}}&#32;{{- if ne $pageCount 1 -}}entries{{- else -}}entry{{- end -}}
           </div>
         </div>
       </div>
     </div>
   </a>
   <div class="tags">
-    {{ range .Data.Terms }}
+    {{ range .Data.Terms.ByCount }}
     <div class="tag">
       <a href="{{.Page.RelPermalink}}" class="btn btn-outline-secondary position-relative rounded-pill">
         {{ .Page.Title }}
