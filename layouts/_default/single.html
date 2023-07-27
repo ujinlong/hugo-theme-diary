@@ -40,17 +40,17 @@
 
             {{- if gt .Params.categories 0 -}}
             <div class="post-cats">
-            <i class="material-icons" style="">folder</i>&nbsp;
+            <i class="material-icons" style="">folder</i>
             {{- range .Params.categories -}}
-            <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>&nbsp;
+            <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>&#32;
             {{- end -}}</div>
             {{- end -}}
 
             {{- if gt .Params.tags 0 -}}
             <div class="post-tags">
-            <i class="material-icons" style="">label</i>&nbsp;
+            <i class="material-icons" style="">label</i>
             {{- range .Params.tags -}}
-            <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>&nbsp;
+            <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>&#32;
             {{- end -}}</div>
             {{- end -}}
 
