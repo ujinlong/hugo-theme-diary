@@ -1,0 +1,41 @@
+// Livere
+#lv-container {
+  padding: 0 30px;
+
+  @media screen and (max-width: $single-column-max-width) {
+    padding: 0 15px;
+  }
+}
+
+// MathJax
+mjx-container {
+  overflow-y: hidden !important;
+}
+
+// Google custom search
+.gsc-control-searchbox-only {
+  display: flex !important;
+  background: none !important;
+  max-width: 70%;
+  margin-top: 1em;
+  margin-left: 1.5em;
+  margin-right: 0.2em;
+
+  @media screen and (max-width: $single-column-max-width) {
+    margin-left: 0.5em;
+    padding-left: 0.2em;
+
+    .gsst_a {
+      display: none;
+    }
+  }
+}
+
+// Valine
+.vwrap * {
+  color: black !important;
+}
+
+.vcontent p {
+  color: black !important;
+}

@@ -92,7 +92,7 @@ body.night {
       $nav-item-active-color-lighten: 20%;
       flex-grow: 1;
       .nav-link-item {
-        color: $dark-mode-text !important;
+        color: $dark-mode-text !important; // ok
         //border-right: 4px solid transparent;
         &:hover {
           border-right: 2px solid
@@ -100,7 +100,7 @@ body.night {
           color: lighten(
             $color-accent,
             $nav-item-hover-color-lighten
-          ) !important;
+          ) !important;  // ok
         }
         &.active {
           border-right: 2px solid $color-accent;
@@ -108,7 +108,7 @@ body.night {
           color: lighten(
             $color-accent,
             $nav-item-active-color-lighten
-          ) !important;
+          ) !important;  // ok
         }
       }
     }
@@ -227,13 +227,13 @@ body.night {
   .toc {
     background-color: $dark-mode-front-container-background;
     * {
-      color: $dark-mode-text;
+      color: $dark-mode-text; // ok
     }
     a {
-      color: $dark-mode-text;
+      color: $dark-mode-text;  // ok
     }
     .toc-active {
-      color: $light-accent !important;
+      color: $light-accent !important; // ok
     }
   }
 
