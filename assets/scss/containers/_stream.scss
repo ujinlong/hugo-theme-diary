@@ -146,6 +146,10 @@
 
           * {
             color: var(--emphasis-accent);
+
+            body.night & {
+              color: var(--extra-emphasis-accent);
+            }
           }
 
           @media screen and (max-width: $single-column-max-width) {

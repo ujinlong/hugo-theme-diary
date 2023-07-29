@@ -1,17 +1,3 @@
-// Livere
-#lv-container {
-  padding: 0 30px;
-
-  @media screen and (max-width: $single-column-max-width) {
-    padding: 0 15px;
-  }
-}
-
-// MathJax
-mjx-container {
-  overflow-y: hidden !important;
-}
-
 // Google custom search
 .gsc-control-searchbox-only {
   display: flex !important;
@@ -29,13 +15,4 @@ mjx-container {
       display: none;
     }
   }
-}
-
-// Valine
-.vwrap * {
-  color: black !important;
-}
-
-.vcontent p {
-  color: black !important;
 }

@@ -16,6 +16,7 @@ theme = "../"
     lineNumbersInTable = true
     noClasses = true
     style = "perldoc"
+    # style = "dracula"
     tabWidth = 4
 
 [params]

@@ -15,6 +15,10 @@
 .pagination {
   display: none;
 
+  body.night & * {
+    color: var(--color-text);
+  }
+
   .pagination-action {
     -webkit-appearance: none; // Fix bootstrap set the appearance to button.
   }
@@ -23,9 +27,11 @@
     display: flex !important;
     flex-direction: row;
     justify-content: space-between;
+
     &:not(.index-page) {
       margin-top: 15px;
     }
+
     .pagination-indicator {
       display: flex;
       flex-direction: column;
@@ -38,6 +44,7 @@
       font-size: 12px;
       font-family: $mono-font-list;
     }
+
     .pagination-action {
       display: flex;
       flex-direction: column;
@@ -49,19 +56,24 @@
       cursor: hand;
       cursor: pointer;
       padding: 15px 0;
+
       :not(.pagination-action-icon) {
         transition: all 0.2s linear;
         font-size: 13px;
         font-family: $mono-font-list;
       }
+
       .pagination-action-icon {
         // margin-right: 4px;
       }
+
       * {
         transition: all 0.3s linear;
       }
+
       &:hover {
         text-decoration: none;
+
         * {
           color: var(--emphasis-accent);
         }

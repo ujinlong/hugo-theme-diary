@@ -91,6 +91,10 @@ code {
   padding: 2px 5px;
   border-radius: 3px;
   font-family: $mono-font-list;
+
+  body.night &:not([data-lang]) {
+    color: var(--extra-emphasis-accent);
+  }
 }
 
 pre {
@@ -127,15 +131,34 @@ blockquote {
 
   * {
     color: var(--emphasis-accent);
+
+    body.night & {
+      color: var(--extra-emphasis-accent);
+    }
+  }
+}
+
+img {
+  body.night & {
+    opacity: 0.8;
   }
 }
 
 a {
   color: $color-accent;
 
+  body.night & {
+    color: var(--emphasis-accent);
+  }
+
   &:hover {
     color: darken($color-accent, 10%);
     text-underline-position: under;
+
+
+    body.night & {
+      color: var(--extra-emphasis-accent);
+    }
   }
 
   @media screen and (max-width: $single-column-max-width) {

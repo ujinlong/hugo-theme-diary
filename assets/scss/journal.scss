@@ -9,5 +9,7 @@
 
 @import "pagination";
 @import "toc";
-@import "plugins";
 
+@import "plugins/comment";
+@import "plugins/latex";
+@import "plugins/search";
