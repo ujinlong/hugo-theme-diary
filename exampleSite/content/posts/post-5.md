@@ -57,6 +57,11 @@ func setCookie(cookie *http.Cookie, w interface{}) error {
 }
 ```
 
+```
+code block without syntax
+```
+
+
 This is blockquote, Will make it *better now*
 
 > 'I want to do with you what spring does with the cherry trees.' <cite>cited ~Pablo Neruda</cite>*
@@ -75,3 +80,10 @@ Ordered list
 1.	Red
 2.  Green
 3.  Blue
+
+Table \(Source: [为什么有些汉字在日语中会读成两拍](https://risehere.net/posts/checked-tone-in-japanese/)\)
+
+|      | 汉语普通话    | 粤语    | 日语      |
+|------|---------------|---------|-----------|
+| 写作 | 贝克汉姆      | 碧咸    | ベッカム  |
+| 读作 | bei ke han mu | bik ham | Be kka mu |
