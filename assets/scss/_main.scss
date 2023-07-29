@@ -235,5 +235,9 @@ a {
 
   .tag {
     margin: 10px;
+
+    body.night & a {
+      color: white;
+    }
   }
 }

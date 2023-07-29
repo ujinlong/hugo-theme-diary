@@ -33,13 +33,22 @@
     &:hover {
       border-right: 2px solid rgba($color-accent, $nav-item-hover-indicator-alpha);
       background: rgba($color-accent, $nav-item-hover-background-alpha);
-      color: darken($color-accent, $nav-item-hover-color-darken);
+      color: darken($color-accent, $nav-item-hover-color-emphasis);
+
+      body.night & {
+        color: lighten($color-accent, $nav-item-hover-color-emphasis);
+      }
     }
 
     &.active {
       border-right: 2px solid $color-accent;
       background: rgba($color-accent, $nav-item-active-background-alpha);
-      color: darken($color-accent, $nav-item-active-color-darken);
+      color: darken($color-accent, $nav-item-active-color-emphasis);
+
+      body.night & {
+        background: rgba($color-accent, $nav-item-active-background-alpha-night);
+        color: lighten($color-accent, $nav-item-hover-color-emphasis);
+      }
     }
   }
 
@@ -75,20 +84,21 @@
         border-right: 2px solid rgba($color-accent, $nav-item-hover-indicator-alpha);
         background: rgba($color-accent, $nav-item-hover-background-alpha);
         color: var(--emphasis-accent);
-      }
 
-      body.night &:hover {
-        color: lighten($color-accent, $nav-item-hover-color-darken);
+        body.night & {
+          color: lighten($color-accent, $nav-item-hover-color-emphasis);
+        }
       }
 
       &.active {
         border-right: 2px solid $color-accent;
         background: rgba($color-accent, $nav-item-active-background-alpha);
         color: var(--emphasis-accent);
-      }
 
-      body.night &.active {
-        color: lighten($color-accent, $nav-item-hover-color-darken);
+        body.night & {
+          background: rgba($color-accent, $nav-item-active-background-alpha-night);
+          color: lighten($color-accent, $nav-item-active-color-emphasis);
+        }
       }
     }
   }

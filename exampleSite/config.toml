@@ -5,6 +5,7 @@ title = "A Hugo Site"
 copyright = "This is a customized copyright."
 theme = "../"
 # googleAnalytics = "UA-123-45"
+paginate = 3
 
 [markup]
   [markup.highlight]
@@ -51,7 +52,7 @@ theme="github-light"
 # Please visit https://giscus.app/ to generate settings.
 [params.giscus]
     data_repo="username/repo"
-    data_repo_id="**************************"    
+    data_repo_id="**************************"
     data_category="General"
     data_category_id="*********************"
     data_mapping="pathname"

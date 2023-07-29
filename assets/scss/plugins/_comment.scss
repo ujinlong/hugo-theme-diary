@@ -10,10 +10,18 @@
 // Valine
 .vwrap * {
   color: black !important;
+
+  body.night & {
+    color: var(--color-text) !important;
+  }
 }
 
 .vcontent p {
   color: black !important;
+
+  body.night & {
+    color: var(--color-text) !important;
+  }
 }
 
 // Gitalk

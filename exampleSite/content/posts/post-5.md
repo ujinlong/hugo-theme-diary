@@ -57,6 +57,11 @@ func setCookie(cookie *http.Cookie, w interface{}) error {
 }
 ```
 
+```
+code block without syntax
+```
+
+
 This is blockquote, Will make it *better now*
 
 > 'I want to do with you what spring does with the cherry trees.' <cite>cited ~Pablo Neruda</cite>*
