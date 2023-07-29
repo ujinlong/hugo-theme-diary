@@ -122,10 +122,12 @@
 
     .single-column-header-title {
       font-size: $single-column-nav-title-size;
+      color: var(--color-text);
     }
 
     .single-column-header-subtitle {
       font-size: $single-column-nav-subtitle-size;
+      color: var(--color-text);
     }
   }
 }
