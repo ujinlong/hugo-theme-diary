@@ -84,21 +84,14 @@
 <link rel="apple-touch-icon" href="{{ .Site.Params.touchicon | absURL }}" />
 {{ end }}
 
-{{/* For compatibility. View https://github.com/AmazingRise/hugo-theme-diary/pull/135 for details. */}}
-{{- $hugoVersion := split (replaceRE ".*([0-9]+)\\.([0-9]+)\\.([0-9]+).*" "$1 $2 $3" hugo.Version) " " -}}
-{{- if and (eq (int (index $hugoVersion 0)) 0) (ge (int (index $hugoVersion 1)) 101) -}}
-    {{- /* no leading slash */ -}}
-    {{ if and (not (.Params.disableToC) ) (.IsPage) }}
-      <script src="{{"js/toc.js" | relURL}}"></script>
-    {{ end }}
-    <link type="text/css" rel="stylesheet" href="{{"vendor/css/bootstrap.min.css" | relURL}}">
-{{- else -}}
-    {{- /* with leading slash */ -}}
-    {{ if and (not (.Params.disableToC) ) (.IsPage) }}
-      <script src="{{"/js/toc.js" | relURL}}"></script>
-    {{ end }}
-    <link type="text/css" rel="stylesheet" href="{{"/vendor/css/bootstrap.min.css" | relURL}}">
-{{- end -}}
+{{ if and (not (.Params.disableToC) ) (.IsPage) }}
+{{ $js_toc := resources.Get "js/toc.js" | resources.Minify }}
+<script src="{{ $js_toc.RelPermalink }}"></script>
+{{ end }}
+
+{{/* bootstrap css */}}
+{{ $style_bootstrap := resources.Get "vendor/css/bootstrap.min.css" | resources.ExecuteAsTemplate "bootstrap.css" . | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $style_bootstrap.RelPermalink }}" integrity="{{ $style_bootstrap.Data.Integrity }}" media="screen" />
 
 {{/* unified journal css */}}
 {{ $styles := resources.Get "scss/journal.scss" | resources.ExecuteAsTemplate "journal.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint }}
@@ -169,15 +162,10 @@
 {{ if and ( and ( .Site.Params.enableGitalk ) ( .IsPage ) ) ( or ( not ( isset .Params "comment" ) ) ( eq .Params.comment true ) ) }}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-{{/* For compatibility. View https://github.com/AmazingRise/hugo-theme-diary/pull/135 for details. */}}
-{{- $hugoVersion := split (replaceRE ".*([0-9]+)\\.([0-9]+)\\.([0-9]+).*" "$1 $2 $3" hugo.Version) " " -}}
-{{- if and (eq (int (index $hugoVersion 0)) 0) (ge (int (index $hugoVersion 1)) 101) -}}
-    {{- /* no leading slash */ -}}
-    <script src="{{"vendor/js/md5.min.js" | relURL}}"></script>
-{{- else -}}
-    {{- /* with leading slash */ -}}
-    <script src="{{"/vendor/js/md5.min.js" | relURL}}"></script>
-{{- end -}}
+
+{{ $js_md5 := resources.Get "vendor/js/md5.min.js" }}
+<script src="{{ $js_md5.RelPermalink }}"></script>
+
 <script>
   var gitalk = new Gitalk({
   clientID: '{{ .Site.Params.Gitalk.client_id }}',
