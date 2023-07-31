@@ -11,6 +11,12 @@
 @import "pagination";
 @import "toc";
 
+@import "plugins/skip-to-main";
 @import "plugins/comment";
 @import "plugins/latex";
 @import "plugins/search";
+@import "plugins/pagefind";
+@import "plugins/codefence";
+@import "plugins/copy-code";
+
+@import "shortcodes/kbd";

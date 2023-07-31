@@ -5,14 +5,16 @@ $color-accent: #037BBA;
 @mixin theme-day {
   --back-container-background: #fcfcfc;
   --front-container-background: #ffffff;
+  --mark: rgb(255,212,0,10%);
 
+  --color-accent: #{$color-accent};
   --emphasis-accent: #{darken($color-accent, 10%)};
-  --extra-emphasis-accent: #{darken($color-accent, 50%)};
-  --color-text: var(--extra-emphasis-accent);
+  --middle-accent: #{darken($color-accent, 50%)};
+  --color-text: var(--middle-accent);
 
   @if lightness($color-accent) <20% {
     --emphasis-accent: #{$color-accent};
-    --extra-emphasis-accent: #{$color-accent};
+    --middle-accent: #{$color-accent};
     --color-text: #{$color-accent};
   }
 }
@@ -20,16 +22,18 @@ $color-accent: #037BBA;
 @mixin theme-night {
   --back-container-background: #212121;
   --front-container-background: #282828;
+  --mark: rgb(255,212,0,20%);
 
+  --color-accent: #{$color-accent};
   --emphasis-accent: #{lighten($color-accent, 10%)};
   // lighten($color-accent, $nav-item-hover-color-emphasis);
   // #{lighten($color-accent, 10%)};
-  --extra-emphasis-accent: #{lighten($color-accent, 30%)};
+  --middle-accent: #{lighten($color-accent, 30%)};
   --color-text: #{darken(#fff, 10%)};
 
     @if lightness($color-accent) <20% {
     --emphasis-accent: #{lighten($color-accent, 30%)};
-    --extra-emphasis-accent: #{lighten($color-accent, 50%)};
+    --middle-accent: #{lighten($color-accent, 50%)};
     --color-text: #{darken(#fff, 10%)};
   }
 }

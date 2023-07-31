@@ -6,5 +6,5 @@
 {{- if not .Site.IsServer -}}{{/* partial "disqus.html" . */}}{{- end -}}
 
 {{/* copy code */}}
-{{ $js_clipboard := resources.Get "js/clipboard.js" | resources.Minify }}
-<script src="{{ $js_clipboard.RelPermalink }}"></script>
+{{ $js_copy_code := resources.Get "js/copy-code.js" | resources.Minify }}
+<script src="{{ $js_copy_code.RelPermalink }}"></script>
