@@ -21,14 +21,17 @@
   svg {
     fill: black;
   }
-}
 
-.copy-code-button:hover,
-.copy-code-button:focus,
-pre:active + .copy-code-button,
-pre:focus + .copy-code-button,
-div.highlight:active > .copy-code-button,
-div.highlight:focus > .copy-code-button {
-  cursor: pointer;
-  opacity: 1;
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    opacity: 1;
+  }
+
+  pre:active+&,
+  pre:focus+&,
+  div.highlight:active>&,
+  div.highlight:focus>& {
+    opacity: 1;
+  }
 }
