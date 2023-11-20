@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}" x-ms-format-detection="none">
-<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
 {{- partial "head.html" . -}}
-<script src="/_pagefind/pagefind-ui.js" type="text/javascript"></script>
+<script src="/pagefind/pagefind-ui.js" type="text/javascript"></script>
 <body>
 
 <section class="a11y-links">
@@ -23,9 +23,9 @@
           </div>
           <div id="search"></div>
           <script>
-            window.addEventListener('DOMContentLoaded', (event) => {
-              new PagefindUI({ element: "#search" });
-            });
+              window.addEventListener('DOMContentLoaded', (event) => {
+                  new PagefindUI({ element: "#search", showSubResults: true });
+              });
           </script>
         </div>{{/* close post-head-wrapper-text-only */}}
       </div>{{/* close post */}}
