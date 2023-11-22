@@ -33,25 +33,6 @@ body.night {
   --chroma-pink:   #ff79c6;
 }
 
-// hide scrollbar
-.highlight pre {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  // border-radius: 0;
-  // padding: 0.8rem calc(var(--page-margin) + 3px + 3vw);
-  // margin-left: calc(-1 * var(--page-margin));
-  // margin-right: calc(-1 * var(--page-margin));
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}
-
-// fix bold colour
-code * {
-  // color: inherit;
-}
-
 // chroma code highlight
 /* Background */ .bg { color: var(--chroma-fg); background-color: var(--chroma-bg); }
 /* PreWrapper */ .chroma { color: var(--chroma-fg); background-color: var(--chroma-bg); }
@@ -65,7 +46,8 @@ code * {
 /* LineHighlight */ .chroma .hl { background-color: var(--chroma-sl) !important; }
 /* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: var(--chroma-lnt) }
 /* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: var(--chroma-lnt) }
-/* Line */ .chroma .line { display: flex; }
+/* Line */ /* https://github.com/alecthomas/chroma/issues/722 */
+.chroma .line, .chroma .lntable .lnt, .chroma .lntable .hl { display: flex; }
 
 /* KeywordConstant, KeywordNamespace, KeywordPseudo, KeywordReserved,
 NameTag, Operator, OperatorWord,
