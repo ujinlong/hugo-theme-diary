@@ -50,12 +50,29 @@ Example result
     </code>
   </pre>
 </div>
+
+WIP
+---
+Add whitespace display.
+Regex ref: https://stackoverflow.com/a/48954769
+RE2 doc: https://github.com/google/re2/wiki/Syntax/
+Remember: no lookahead, no lookbehind.
+
+Feature request to Chroma: https://github.com/alecthomas/chroma/issues/895
+
+Step 1: Single space
+--------------------
+`( +)((\S|<[^>]+>)*)$` => `<span class="w">$1</span>$2` (only matches the last space per line)
+`<\/span>( +)<span` => `</span><span class="w">$1</span><span` (only matches spaces between tags)
+
+{{- $codeBlock := transform.Highlight .Inner .Type .Options -}}
+{{- $codeBlock  = ($codeBlock | replaceRE `(<\/span>)( +)(<span)` `$1<span class="ws">$2</span>$3`) -}}
+{{- $codeBlock  = ($codeBlock | replaceRE `(<span class="cl">)( +)` `$1<span class="ws">$2</span>`) -}}
+{{- $codeBlock | safeHTML -}}
 */ -}}
-{{ if transform.CanHighlight .Type }}
-  {{/* Supported Chroma Language*/}}
+{{ if transform.CanHighlight .Type }}{{- /* Supported language */ -}}
   {{- transform.Highlight .Inner .Type .Options | safeHTML -}}
-{{ else }}
-  {{/* Unsupported Language: mimic the chroma structure for easier CSS control */}}
+{{ else }}{{- /* Unsupported language: mimic the chroma structure for easier CSS control */ -}}
   <div class="highlight">
   {{ with .Attributes.title }}
     <div class="highlight-title"><span>{{ . }}</span></div>

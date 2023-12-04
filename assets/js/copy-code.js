@@ -5,15 +5,26 @@ const svgCheck =
   '<svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg>';
 const addCopyButtons = (clipboard) => {
   // 1. Look for pre > code elements in the DOM
-  document.querySelectorAll(".highlight > pre > code").forEach((codeBlock) => {
+  document.querySelectorAll(".chroma code").forEach((codeBlock) => {
     // 2. Create a button that will trigger a copy operation
     const button = document.createElement("button");
     button.className = "copy-code-button";
     button.type = "button";
     button.title = "Copy to clipboard";
     button.innerHTML = svgCopy;
+    // 2.5. Remove empty lines
+    // https://stackoverflow.com/a/59137147
+    let toPaste = "";
+    (codeBlock.innerText.split('\n')).forEach((textLine) =>{
+      if (textLine.length > 0) {
+        if (toPaste != "") {
+          toPaste += '\n';
+        }
+        toPaste += textLine;
+      }
+    });
     button.addEventListener("click", () => {
-      clipboard.writeText(codeBlock.innerText).then(
+      clipboard.writeText(toPaste).then(
         () => {
           button.blur();
           button.innerHTML = svgCheck;
