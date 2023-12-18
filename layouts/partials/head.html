@@ -89,12 +89,11 @@
 <script src="{{ $js_toc.RelPermalink }}"></script>
 {{ end }}
 
-{{/* bootstrap css */}}
-{{ $style_bootstrap := resources.Get "vendor/css/bootstrap.min.css" | resources.ExecuteAsTemplate "bootstrap.css" . | resources.Fingerprint }}
-<link rel="stylesheet" href="{{ $style_bootstrap.RelPermalink }}" integrity="{{ $style_bootstrap.Data.Integrity }}" media="screen" />
+{{/* modern normalize css */}}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@2/modern-normalize.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-{{/* unified journal css */}}
-{{ $styles := resources.Get "scss/journal.scss" | resources.ExecuteAsTemplate "journal.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+{{/* unified journal css - | resources.Fingerprint */}}
+{{ $styles := resources.Get "scss/journal.scss" | resources.ExecuteAsTemplate "journal.scss" . | resources.ToCSS | resources.Minify }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen" />
 
 {{/* custom CSS (site wide) under ./assets/css/ */}}
