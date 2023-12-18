@@ -203,13 +203,6 @@ window.addEventListener(
   false
 );
 
-document.querySelectorAll("table").forEach(function (elem) {
-  elem.classList.add("table-striped");
-  elem.classList.add("table");
-  elem.classList.add("table-responsive");
-  elem.classList.add("table-hover");
-});
-
 // Night mode
 
 var isDarkMode = false;
@@ -279,8 +272,6 @@ try {
 } catch (_) {
 
 }
-
-
 
 // Drawer
 
