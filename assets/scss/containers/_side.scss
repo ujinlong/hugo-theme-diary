@@ -36,7 +36,7 @@
       color: darken($color-accent, $nav-item-hover-color-emphasis);
 
       body.night & {
-        color: lighten($color-accent, $nav-item-hover-color-emphasis);
+        color: var(--middle-accent);
       }
     }
 
@@ -47,7 +47,7 @@
 
       body.night & {
         background: rgba($color-accent, $nav-item-active-background-alpha-night);
-        color: lighten($color-accent, $nav-item-hover-color-emphasis);
+        color: var(--emphasis-accent);
       }
     }
   }
@@ -86,7 +86,7 @@
         color: var(--emphasis-accent);
 
         body.night & {
-          color: lighten($color-accent, $nav-item-hover-color-emphasis);
+          color: var(--middle-accent);
         }
       }
 
@@ -97,7 +97,7 @@
 
         body.night & {
           background: rgba($color-accent, $nav-item-active-background-alpha-night);
-          color: lighten($color-accent, $nav-item-active-color-emphasis);
+          color: var(--emphasis-accent);
         }
       }
     }

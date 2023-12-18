@@ -10,12 +10,11 @@ $color-accent: #037BBA;
   --color-accent: #{$color-accent};
   --emphasis-accent: #{darken($color-accent, 10%)};
   --middle-accent: #{darken($color-accent, 50%)};
-  --color-text: var(--middle-accent);
+  --color-text: black;
 
   @if lightness($color-accent) <20% {
     --emphasis-accent: #{$color-accent};
     --middle-accent: #{$color-accent};
-    --color-text: #{$color-accent};
   }
 }
 
@@ -25,15 +24,15 @@ $color-accent: #037BBA;
   --mark: rgb(255,212,0,20%);
 
   --color-accent: #{$color-accent};
-  --emphasis-accent: #{lighten($color-accent, 10%)};
+  --emphasis-accent: #{mix($color-accent, white, 50%)};
   // lighten($color-accent, $nav-item-hover-color-emphasis);
   // #{lighten($color-accent, 10%)};
-  --middle-accent: #{lighten($color-accent, 30%)};
+  --middle-accent: #{mix($color-accent, white, 30%)};
   --color-text: #{darken(#fff, 10%)};
 
-    @if lightness($color-accent) <20% {
-    --emphasis-accent: #{lighten($color-accent, 30%)};
-    --middle-accent: #{lighten($color-accent, 50%)};
-    --color-text: #{darken(#fff, 10%)};
+  @if lightness($color-accent) <20% {
+    --color-accent: #{mix($color-accent, white, 50%)};
+    --emphasis-accent: #{mix($color-accent, white, 45%)};
+    --middle-accent: #{mix($color-accent, white, 25%)};
   }
 }
