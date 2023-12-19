@@ -49,9 +49,9 @@ For details, please visit [project wiki](https://github.com/AmazingRise/hugo-the
 
 ## Fork notes
 
-I think I originally forked this theme to retain the [custom fonts](https://github.com/loikein/hugo-theme-diary/blob/main/layouts/partials/head.html#L129-L140). Now it has become my Hugo testing ground.
+I think I originally forked this theme to retain the [custom fonts](https://github.com/loikein/hugo-theme-diary/blob/343e0ec8bfaee9cf687879a377a818e1ae94ffa4/layouts/partials/head.html#L58-L61). Now it has become my Hugo testing ground.
 
-The stylesheets situation has been a mess, because I did not speak SCSS back then. You will have to also load [the site-wide CSS over my blog](https://github.com/loikein/blog-hugo/tree/main/assets/css) to make everything work. I will address this issue [someday](https://github.com/loikein/hugo-theme-diary/issues/2).
+The stylesheets situation has been a mess, because I did not speak SCSS back then. You will have to also load [the site-wide CSS over my blog](https://github.com/loikein/blog-hugo/tree/main/assets/css) to make everything work. I am trying to port them over.
 
 
 ## Quick Start
