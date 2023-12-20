@@ -14,14 +14,14 @@ body {
 // navbar
 .navbar>.container,
 .navbar>.container-fluid {
-  display:-ms-flexbox;
-  display:flex;
-  -ms-flex-wrap:wrap;
-  flex-wrap:wrap;
-  -ms-flex-align:center;
-  align-items:center;
-  -ms-flex-pack:justify;
-  justify-content:space-between;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .navbar-brand {
@@ -36,10 +36,10 @@ body {
 
 @supports ((position:-webkit-sticky) or (position:sticky)) {
   .sticky-top {
-    position:-webkit-sticky;
-    position:sticky;
-    top:0;
-    z-index:1020
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
   }
 }
 
