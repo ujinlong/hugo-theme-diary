@@ -14,12 +14,12 @@
     min-height: 100vh;
     padding: 20px 0 20px 0;
     background: var(--front-container-background);
-    box-shadow: 0 0 16px rgba(0, 0, 0, 0.12);
+    //box-shadow: 0 0 16px rgba(0, 0, 0, 0.12);
 
     @media screen and (max-width: $single-column-max-width) {
       min-height: unset;
       padding: 0;
-      box-shadow: 0 0 0 rgba(0, 0, 0, 0.2);
+      //box-shadow: 0 0 0 rgba(0, 0, 0, 0.2);
     }
 
     &,

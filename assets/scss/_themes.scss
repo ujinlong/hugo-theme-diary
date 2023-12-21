@@ -3,8 +3,8 @@ $color-accent: #037BBA;
 // $color-accent: purple;
 
 @mixin theme-day {
-  --back-container-background: #fcfcfc;
-  --front-container-background: #ffffff;
+  --back-container-background: rgb(245, 245, 245);
+  --front-container-background: rgb(245, 245, 245);
   --mark: rgb(255,212,0,10%);
 
   --color-accent: #{$color-accent};
@@ -19,8 +19,8 @@ $color-accent: #037BBA;
 }
 
 @mixin theme-night {
-  --back-container-background: #212121;
-  --front-container-background: #282828;
+  --back-container-background: #24292e;
+  --front-container-background: #24292e;
   --mark: rgb(255,212,0,20%);
 
   --color-accent: #{$color-accent};
