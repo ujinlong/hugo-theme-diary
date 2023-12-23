@@ -17,6 +17,7 @@
 
   body.night & * {
     color: var(--color-text);
+    background: rgba($color-accent, 0.23);
   }
 
   ul {
